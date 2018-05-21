@@ -1,4 +1,4 @@
-# various_commands
+# Various commands
 
 ## This is a repository for various small commands that have been used in analyses
 
@@ -30,6 +30,7 @@ for(i in 1:length(file.names)){
 
 ### Command to loop through rows in a fam file and create seperate fam file for each individual in the pedigree
 
+```{R}
 family = fread("/directory", fill = TRUE)
 
 for (row in 1:nrow(family)){
@@ -37,4 +38,7 @@ for (row in 1:nrow(family)){
   data = family[row,]
   write.table(data, file = paste0("directory", as.character(i), ".snps.common.vcf.fam"), row.names = F, col.names = F, quote = F)
   write.table(data, file = paste0("directory", as.character(i), ".indels.common.vcf.fam"), row.names = F, col.names = F, quote = F)}
+  
+  ```
+  
 
